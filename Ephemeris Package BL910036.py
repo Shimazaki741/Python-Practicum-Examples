@@ -66,14 +66,6 @@ def main():
     ser = serial.Serial('COM6', 9600)
     
     print()
-    print('Made by: Christopher Tumamac Jr.')
-    print()
-    print()
-    
-    text = '''                      AUTOMATIC CELESTIAL OBJECT TRACKER
-                       ASTO7 Research Immersion Project
-                              
-    '''
 
     for x in text:
             print(x, end='', flush=True)
