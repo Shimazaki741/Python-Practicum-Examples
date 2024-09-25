@@ -1,0 +1,50 @@
+import random
+
+def generate_numbers():
+    orig_set = {round(random.uniform(1, 100), 2) for _ in range(100)}
+
+    set1 = {int(num) for num in orig_set}
+    set2 = {int(str(num).split('.')[1]) for num in orig_set}
+    
+    combined_set = set1.union(set2)
+    
+    return orig_set, set1, set2, combined_set
+
+print(f"orig_set = {orig_set}")
+print(f"Set1 = {set1}")
+print(f"Set2 = {set2}")
+print(f"set = {combined_set}")
+
+def menu():
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+    print("\t    ---------Celestial Object Tracker------------")
+    print("\t\t----------------------------------")
+    print("\t\t| 0. Find Cordinates             |")
+    print("\t\t|--------------------------------|")
+    print("\t\t| 1. Check Position              |")
+    print("\t\t| 2. Track Position              |")
+    print("\t\t| 3. Sunset Time                 |")
+    print("\t\t| 4. Sunrise Time                |")
+    print("\t\t| 5. All Planets Visibility      |")
+    print("\t\t| 6. Check Twilights             |")
+    print("\t\t| 7. Exit                        |")
+    print("\t\t----------------------------------")
+def menu2():
+    t.sleep(5)
+    print("\t    ---------Celestial Object Tracker------------")
+    print("\t\t----------------------------------")
+    print("\t\t| 1. Check Position              |")
+    print("\t\t| 2. Track Position              |")
+    print("\t\t| 3. Sunset Time                 |")
+    print("\t\t| 4. Sunrise Time                |")
+    print("\t\t| 5. All Planets Visibility      |")
+    print("\t\t| 6. Check Twilights             |")
+    print("\t\t| 7. Exit                        |")
+    print("\t\t----------------------------------")
+
+# Divisibility
+# num = tuple(random.randint(1,100) for i in range (50))
+# print(sorted(num))
+
+# div = tuple(i for i in num if i % 13 == 0)
+# print(div)
