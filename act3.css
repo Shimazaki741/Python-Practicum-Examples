@@ -1,0 +1,68 @@
+.activity-page {
+    text-align: center;
+}
+
+.act3Content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center children horizontally */
+    background-color: azure;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.panel {
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.displayDetection {
+    padding: 10px;
+    margin: 30px 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.displayDetection h5 {
+    margin: 5px;
+}
+
+.displayDetection h3 {
+    padding: 10px;
+}
+
+#cameraDisplay {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.panel.Right {
+    justify-content: center;
+}
+
+.result {
+    padding: 5px;
+    width: 300px;
+    background-color: rgb(86, 86, 86);
+    border-radius: 5px;
+    color: azure;
+}
+
+.temphumid{
+    display: flex;
+}
+
+
+.result.Temperature, .result.Humidity{
+    width: 200px;
+}
