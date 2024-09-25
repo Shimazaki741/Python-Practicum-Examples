@@ -1,0 +1,37 @@
+import datetime
+
+budget = 125205789.75
+chair_p = 1557.10
+ladder_p = 3998.56
+table_p = 104763.50
+ladder_c = 5000
+tax = 1.12
+
+remain = budget - ((ladder_c * ladder_p) * tax)
+table_c = remain // ((table_p + (chair_p * 7)) * tax)
+chair_c = table_c * 7
+change = remain - (tax * ((table_p * table_c) + (chair_p * chair_c)))
+kupit = change * 0.8
+
+ladder_f = ladder_c * ladder_p
+table_f = table_p * table_c
+chair_f = chair_p * chair_c
+subtotal = ladder_f + table_f + chair_f
+total = subtotal * tax
+
+print('Timbogguo Manufacturing Corporation')
+print('Official Receipt')
+print('Customer: Shiminet Sara')
+print(datetime.datetime.now())
+print('Address: KoJiC Compound, Davao City, Philippines')
+print()
+print('Item:       Amount:  Price:')
+print(f'ladder      {ladder_c}     {ladder_f}')
+print(f'table       {int(table_c)}      {table_f}')
+print(f'chair       {int(chair_c)}     {chair_f}')
+print()
+print(f'Subtotal:            {subtotal}')
+print(f'Sales Tax:           12%')
+print(f'total:               {total:.2f}')
+print(f'Change:              {change:.2f}')
+print(f'Kupit:               {kupit:.2f}')
