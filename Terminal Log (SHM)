@@ -1,0 +1,94 @@
+import datetime
+
+\\
+x=input("Enter a Celestial Body name: ")
+if x.title() == "Moon":
+    body=ephem.Moon()
+elif x.title() == "Sun":
+    body=ephem.Sun()
+elif x.title() == "Mercury":
+    body=ephem.Mercury()
+elif x.title() == "Venus":
+    body=ephem.Venus()
+elif x.title() == "Mars":
+    body=ephem.Mars()
+elif x.title() == "Jupiter":   
+    body=ephem.Jupiter()
+elif x.title() == "Saturn":
+    body=ephem.Saturn()
+elif x.title() == "Uranus":
+    body=ephem.Uranus()
+elif x.title() == "Neptune":
+    body=ephem.Neptune()
+elif x.title() == "Pluto":
+    body=ephem.Pluto()
+else:
+    print("please enter a valid obbject")
+    exit()
+\\
+
+budget = 125205789.75
+chair_p = 1557.10
+ladder_p = 3998.56
+table_p = 104763.50
+ladder_c = 5000
+tax = 1.12
+
+remain = budget - ((ladder_c * ladder_p) * tax)
+table_c = remain // ((table_p + (chair_p * 7)) * tax)
+chair_c = table_c * 7
+change = remain - (tax * ((table_p * table_c) + (chair_p * chair_c)))
+kupit = change * 0.8
+
+ladder_f = ladder_c * ladder_p
+table_f = table_p * table_c
+chair_f = chair_p * chair_c
+subtotal = ladder_f + table_f + chair_f
+total = subtotal * tax
+
+\\
+for i in range(y):
+    t.sleep(interval)
+    observer.date = ephem.now()
+    body.compute(observer)
+    azimuth2 = math.degrees(body.az)
+    altitude2 = round(math.degrees(body.alt),3)
+    #altitude2=round(altitude2)
+    #azimuth2=round(azimuth2)
+    #clock_system
+    azimuth2=azimuth2/30
+    hours2=int(azimuth2)
+    minutes2=round((azimuth2-hours2)*60)
+    if azimuth2==azimuth:
+        #az2 changes #minutes 2 changes
+        continue
+    else:
+        print(f"\t\t|   {hours2}:{minutes2}   | {altitude2} |")
+        azimuth=azimuth2
+        altitude=altitude2
+        hours=hours2
+        minutes=minutes2
+ending_time=datetime.datetime.now()
+ending_time=ending_time.strftime("%H:%M:%S")
+print(f'''Starting time= {starting_time}
+    ending_time={ending_time}"
+    Total Time Tracked={ending_time-starting_time}''')  
+print("Exited")
+\\
+
+print('Timbogguo Manufacturing Corporation')
+print('Official Receipt')
+print('Customer: Shiminet Sara')
+print(datetime.datetime.now())
+print('Address: KoJiC Compound, Davao City, Philippines')
+print()
+print('Item:       Amount:  Price:')
+print(f'ladder      {ladder_c}     {ladder_f}')
+print(f'table       {int(table_c)}      {table_f}')
+print(f'chair       {int(chair_c)}     {chair_f}')
+print()
+print(f'Subtotal:            {subtotal}')
+print(f'Sales Tax:           12%')
+print(f'total:               {total:.2f}')
+print(f'Change:              {change:.2f}')
+print(f'Kupit:               {kupit:.2f}')
