@@ -1,0 +1,168 @@
+try:
+    try:
+        import ephem
+        import math
+        import webbrowser
+        import time as t
+        import datetime
+        import pandas as pd
+    except Exception as e:
+        print("Please install the necessary modules")
+        print(''' ephem
+         math
+         webbrowser
+         time
+         datetime
+         pandas''')
+    def redirection():#working properly (test 4 conductedd)
+        webbrowser.open("https://www.findmylatlng.com/")
+        t.sleep(10)
+    def guided():
+        print("Guidation Coordinization Initialized")
+        t.sleep(1)
+        print("Step 0: Allow permission to acceess location in the website")
+        t.sleep(1)
+        print("Step 1: Wait for few seconds")
+        t.sleep(2)
+        print("Step 2: Your coordinates will be shown in the white box")
+        t.sleep(2)
+        print("Step 3: Copy the coordinates  and paste it ")
+        t.sleep(3)
+        print("Step 4: There will be a 20 second window for you to get your coordinates")
+        t.sleep(1)
+        print("Step 5: Example coordinates - 21.00321,321.43932")
+        t.sleep(8)
+        print("Redirecting you towards")
+        t.sleep(1)
+        redirection() 
+
+# START
+
+import itertools as it
+
+main_75 = {
+    'ymbg' : 'Yumburger (Burger)',
+    'bgstk' : 'Burger Steak (Platter Meal)',
+    'jlspg' : 'Jolly Spaghetti (Platter Meal)'
+}
+
+main_85 = {
+    'cymbg' : 'Cheesy Yumburger (Burger)',
+    'jlhtdg' : 'Jolly Hotdog (Burger)',
+    'ccsdwch' : 'Crispy Chicken Sandwich (Burger)'
+}
+
+side = {
+    'ckflt' : 'Coke Float (Drinks)',
+    'Pnpljc' : 'Pineapple Juice (Drinks)',
+    'jlcfr' : 'Jolly Crispy Fries (Fries)',
+    'pmp' : 'Peach Mango Pie (Pie)',
+    'chsnd' : 'Choco Sundae (Drinks)',
+    'icdlt' : 'Iced Latte (Drinks)'
+}
+
+# BREAK
+
+    def menu():
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+        print("\t    ---------Celestial Object Tracker------------")
+        print("\t\t----------------------------------")
+        print("\t\t| 0. Find Cordinates             |")
+        print("\t\t|--------------------------------|")
+        print("\t\t| 1. Check Position              |")
+        print("\t\t| 2. Track Position              |")
+        print("\t\t| 3. Sunset Time                 |")
+        print("\t\t| 4. Sunrise Time                |")
+        print("\t\t| 5. All Planets Visibility      |")
+        print("\t\t| 6. Check Twilights             |")
+        print("\t\t| 7. Exit                        |")
+        print("\t\t----------------------------------")
+    def menu2():
+        t.sleep(5)
+        print("\t    ---------Celestial Object Tracker------------")
+        print("\t\t----------------------------------")
+        print("\t\t| 1. Check Position              |")
+        print("\t\t| 2. Track Position              |")
+        print("\t\t| 3. Sunset Time                 |")
+        print("\t\t| 4. Sunrise Time                |")
+        print("\t\t| 5. All Planets Visibility      |")
+        print("\t\t| 6. Check Twilights             |")
+        print("\t\t| 7. Exit                        |")
+        print("\t\t----------------------------------")
+    def sunrise():
+        print("Initialized")
+        city=ephem.Observer()
+        city.lon =121.13347
+        city.lat =14.63747
+        city.date = ephem.now()
+        sun=ephem.Sun()
+        sunrise=ephem.localtime(city.next_rising(sun))
+        print(sunrise.strftime("%H'o clock at %M Minutes"))
+    def chart():
+        print("Calculating.")
+        t.sleep(1)
+        print("Calculating..")
+        t.sleep(1)
+        print("Calculating...")
+        t.sleep(1)
+        city=ephem.Observer()
+        city.lon =121.13347
+        city.lat =14.63747
+        city.date =ephem.now()
+        mercury = ephem.Mercury(city)
+        mercury_az = round(math.degrees(mercury.az), 2)
+        mercury_alt = round(math.degrees(mercury.alt), 2)
+        mercury_phase = round(mercury.phase, 2)
+        mercury_visibility = ""
+
+# START
+
+print("Main:                                         Side:                                              Price:")
+
+count = 0
+count_side = 0
+
+def cheap(main_75, side):
+    global count
+    global count_side
+    keys_main = list(main_75.keys())
+    keys_side = list(side.keys())
+    while count < len(keys_main):
+      print(f"{main_75[keys_main[count]]: <35}  and      {side[keys_side[count_side]]: <50} (75 Pesos)")
+      count_side += 1
+      if count_side >= len(keys_side):
+        count_side = 0
+        count += 1
+
+cheap(main_75, side)
+
+n = 0
+n_side = 0
+
+def expensive(main_85, side):
+    global n
+    global n_side
+    keys_main = list(main_85.keys())
+    keys_side = list(side.keys())
+    while n < len(keys_main):
+      print(f"{main_85[keys_main[n]]: <35}  and      {side[keys_side[n_side]]: <50} (85 Pesos)")
+      n_side += 1
+      if n_side >= len(keys_side):
+        n_side = 0
+        n += 1
+
+expensive(main_85, side)
+
+# END
+
+        data = {
+            'Planet': ['Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune','Sun','Moon'],
+            'Azimuth': [mercury_az, venus_az, mars_az, jupiter_az, saturn_az, uranus_az, neptune_az,sun_az,moon_az],
+            'Altitude': [mercury_alt, venus_alt, mars_alt, jupiter_alt, saturn_alt, uranus_alt, neptune_alt,sun_alt,moon_alt],
+            'Phase': [mercury_phase, venus_phase, mars_phase, jupiter_phase, saturn_phase, uranus_phase, neptune_phase,sun_phase,moon_phase],
+            'Visibility': [mercury_visibility, venus_visibility, mars_visibility, jupiter_visibility, saturn_visibility,
+                        uranus_visibility, neptune_visibility,sun_visibility,moon_visibility]
+            }
+
+        df = pd.DataFrame(data)
+        print(df)
