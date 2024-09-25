@@ -93,7 +93,7 @@
 # START
 import matplotlib.pyplot as plt
 
-my_file = open("TUMAMAC_my_data.txt")
+my_file = open("your_data.txt")
 data = my_file.read()
 numbers = data.replace('\n', ' ').replace(',','').split()
 my_file.close()
